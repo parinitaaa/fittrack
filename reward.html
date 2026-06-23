@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Pro - Rewards</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <i class="fas fa-dumbbell"></i>
+                <span>FitTrack Pro</span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="progress.html" class="nav-link">
+                    <i class="fas fa-chart-line"></i> Progress
+                </a>
+                <a href="diet.html" class="nav-link">
+                    <i class="fas fa-utensils"></i> Diet
+                </a>
+                <a href="reward.html" class="nav-link active">
+                    <i class="fas fa-trophy"></i> Rewards
+                </a>
+            </div>
+            
+            <div class="nav-user" id="userInfo">
+                <!-- User info will be inserted by JavaScript -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Rewards Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div>
+                <h1 id="pageTitle" data-page-type="Rewards">Your Rewards Center</h1>
+                <p>Earn and claim rewards for your achievements</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Points Summary -->
+        <section class="card">
+            <h2><i class="fas fa-coins"></i> Your Points</h2>
+            
+            <div class="stats-grid mt-3">
+                <div class="stat-card">
+                    <div class="stat-icon points">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="totalPoints">0</div>
+                        <div class="stat-label">Total Points</div>
+                        <div class="stat-change positive">Available to spend</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon streak">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="achievementsCount">0</div>
+                        <div class="stat-label">Achievements</div>
+                        <div class="stat-change positive">Unlocked</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon weight">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="rewardsEarned">0</div>
+                        <div class="stat-label">Rewards Earned</div>
+                        <div class="stat-change positive">Claimed so far</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon calories">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="streakDays">0</div>
+                        <div class="stat-label">Day Streak</div>
+                        <div class="stat-change positive">+10 points/day</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Rewards -->
+        <section class="card">
+            <h2><i class="fas fa-gift"></i> Available Rewards</h2>
+            <p class="mb-3">Claim rewards using your points</p>
+            
+            <div class="rewards-grid" id="rewardsGrid">
+                <!-- Rewards will be inserted by JavaScript -->
+            </div>
+        </section>
+
+        <!-- How to Earn Points -->
+        <section class="card">
+            <h2><i class="fas fa-lightbulb"></i> How to Earn Points</h2>
+            <div class="points-guide mt-3">
+                <div class="point-item" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--light); border-radius: 12px; margin-bottom: 0.5rem;">
+                    <div class="point-icon" style="font-size: 1.5rem;">✅</div>
+                    <div>
+                        <h4 style="margin: 0 0 0.25rem 0;">Complete Profile Setup</h4>
+                        <p style="margin: 0; color: var(--gray);">Earn 50 points</p>
+                    </div>
+                </div>
+                
+                <div class="point-item" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--light); border-radius: 12px; margin-bottom: 0.5rem;">
+                    <div class="point-icon" style="font-size: 1.5rem;">📊</div>
+                    <div>
+                        <h4 style="margin: 0 0 0.25rem 0;">View Recommendations</h4>
+                        <p style="margin: 0; color: var(--gray);">Earn 50 points</p>
+                    </div>
+                </div>
+                
+                <div class="point-item" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--light); border-radius: 12px; margin-bottom: 0.5rem;">
+                    <div class="point-icon" style="font-size: 1.5rem;">🥗</div>
+                    <div>
+                        <h4 style="margin: 0 0 0.25rem 0;">View Diet Plan</h4>
+                        <p style="margin: 0; color: var(--gray);">Earn 50 points</p>
+                    </div>
+                </div>
+                
+                <div class="point-item" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--light); border-radius: 12px; margin-bottom: 0.5rem;">
+                    <div class="point-icon" style="font-size: 1.5rem;">📈</div>
+                    <div>
+                        <h4 style="margin: 0 0 0.25rem 0;">Track Progress</h4>
+                        <p style="margin: 0; color: var(--gray);">Earn 50 points</p>
+                    </div>
+                </div>
+                
+                <div class="point-item" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--light); border-radius: 12px; margin-bottom: 0.5rem;">
+                    <div class="point-icon" style="font-size: 1.5rem;">🏆</div>
+                    <div>
+                        <h4 style="margin: 0 0 0.25rem 0;">Check Rewards</h4>
+                        <p style="margin: 0; color: var(--gray);">Earn 50 points</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <section class="card">
+            <div style="display: flex; justify-content: space-between;">
+                <a href="diet.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Diet Plan
+                </a>
+                <a href="index.html" class="btn btn-primary">
+                    Return to Dashboard <i class="fas fa-home"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Reward Claim Modal -->
+    <div id="rewardModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Claim Reward</h3>
+                <button class="modal-close" onclick="closeRewardModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">Are you sure you want to claim this reward?</p>
+                <div class="modal-actions" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button class="btn btn-secondary" onclick="closeRewardModal()">Cancel</button>
+                    <button class="btn btn-primary" id="confirmClaim">Claim Reward</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="reward.js"></script>
+</body>
+</html>

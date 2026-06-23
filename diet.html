@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Pro - Diet Plan</title>
+    <link rel="stylesheet" href="style.css">
+    <base href="./">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <i class="fas fa-dumbbell"></i>
+                <span>FitTrack Pro</span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="progress.html" class="nav-link">
+                    <i class="fas fa-chart-line"></i> Progress
+                </a>
+                <a href="diet.html" class="nav-link active">
+                    <i class="fas fa-utensils"></i> Diet
+                </a>
+                <a href="reward.html" class="nav-link">
+                    <i class="fas fa-trophy"></i> Rewards
+                </a>
+            </div>
+            
+            <div class="nav-user" id="userInfo">
+                <!-- User info will be inserted by JavaScript -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Diet Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div>
+                <h1 id="pageTitle" data-page-type="Diet Plan">Your Personalized Diet Plan</h1>
+                <p>Follow your customized meal plan for best results</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Daily Nutrition Stats -->
+        <section class="card">
+            <h2><i class="fas fa-chart-pie"></i> Today's Nutrition</h2>
+            
+            <div class="stats-grid mt-3">
+                <div class="stat-card">
+                    <div class="stat-icon calories">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="caloriesToday">1,450 / 1,850</div>
+                        <div class="stat-label">Calories</div>
+                        <div class="stat-change positive">78% of goal</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon weight">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="proteinToday">75g / 185g</div>
+                        <div class="stat-label">Protein</div>
+                        <div class="stat-change positive">40% of goal</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon streak">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="carbsToday">210g / 260g</div>
+                        <div class="stat-label">Carbs</div>
+                        <div class="stat-change positive">80% of goal</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon points">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="fatsToday">45g / 65g</div>
+                        <div class="stat-label">Fats</div>
+                        <div class="stat-change positive">69% of goal</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Today's Meal Plan -->
+        <section class="card">
+            <h2><i class="fas fa-calendar-day"></i> Today's Meal Plan</h2>
+            <div class="meal-grid" id="todayMeals">
+                <!-- Today's meals will be inserted by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Weekly Meal Plan -->
+        <section class="card">
+            <h2><i class="fas fa-calendar-week"></i> Weekly Meal Plan</h2>
+            <div class="week-plan">
+                <div class="week-days" style="display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto;">
+                    <button class="btn btn-secondary day-btn active" data-day="monday">Monday</button>
+                    <button class="btn btn-secondary day-btn" data-day="tuesday">Tuesday</button>
+                    <button class="btn btn-secondary day-btn" data-day="wednesday">Wednesday</button>
+                    <button class="btn btn-secondary day-btn" data-day="thursday">Thursday</button>
+                    <button class="btn btn-secondary day-btn" data-day="friday">Friday</button>
+                    <button class="btn btn-secondary day-btn" data-day="saturday">Saturday</button>
+                    <button class="btn btn-secondary day-btn" data-day="sunday">Sunday</button>
+                </div>
+                <div id="weeklyMeals" class="meal-grid">
+                    <!-- Weekly meals will be inserted by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <section class="card">
+            <div style="display: flex; justify-content: space-between;">
+                <a href="progress.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Progress
+                </a>
+                <a href="reward.html" class="btn btn-primary">
+                    Next: Rewards <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="diet.js"></script>
+</body>
+</html>

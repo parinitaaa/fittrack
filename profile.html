@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FitTrack Pro - Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">
+            <i class="fas fa-dumbbell"></i> FitTrack Pro
+        </a>
+        <div id="userInfo" class="nav-user"></div>
+    </div>
+</nav>
+
+<main class="container">
+    <section class="card">
+        <h2><i class="fas fa-user-circle"></i> Edit Profile</h2>
+
+        <!-- BASIC DETAILS -->
+        <div class="profile-form-grid">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="name" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Email (read only)</label>
+                <input type="email" id="email" class="form-control" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Height (cm)</label>
+                <input type="number" id="height" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Weight (kg)</label>
+                <input type="number" id="weight" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Fitness Goal</label>
+                <select id="fitnessGoal" class="form-control">
+                    <option value="weight_loss">Weight Loss</option>
+                    <option value="muscle_gain">Muscle Gain</option>
+                    <option value="maintenance">Maintenance</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="btn btn-primary mt-3" onclick="saveProfile()">
+            <i class="fas fa-save"></i> Save Profile
+        </button>
+
+        <hr class="mt-4">
+
+        <!-- PASSWORD -->
+        <h3 id="password"><i class="fas fa-lock"></i> Change Password</h3>
+
+        <div class="profile-form-grid">
+            <input type="password" id="newPassword" class="form-control" placeholder="New password">
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password">
+        </div>
+
+        <button class="btn btn-secondary mt-2" onclick="changePassword()">
+            Update Password
+        </button>
+
+        <hr class="mt-4">
+
+        <!-- ACTIONS -->
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <button class="btn btn-secondary" onclick="forgotPassword()">Forgot Password</button>
+            <button class="btn btn-secondary" onclick="addAnotherMember()">Add Another Member</button>
+            <button class="btn btn-danger" onclick="auth.logout()">Logout</button>
+        </div>
+    </section>
+</main>
+
+<script src="auth.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FitTrack Pro - Progress</title>
+    <link rel="stylesheet" href="style.css">
+    <base href="./">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+
+        <a href="index.html" class="nav-brand">
+            <i class="fas fa-dumbbell"></i> FitTrack Pro
+        </a>
+
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="progress.html" class="nav-link active">Progress</a>
+            <a href="diet.html" class="nav-link">Diet</a>
+            <a href="reward.html" class="nav-link">Rewards</a>
+        </div>
+
+        <div id="userInfo" class="nav-user"></div>
+    </div>
+</nav>
+
+<header class="dashboard-header">
+    <div class="container">
+        <h1>Daily Fitness Progress</h1>
+        <p>Update your daily physical activities</p>
+    </div>
+</header>
+
+<main class="container">
+
+<!-- ACTIVITIES -->
+<section class="card">
+    <h2><i class="fas fa-running"></i> Fitness Activities</h2>
+    <div class="stats-grid" id="activitiesContainer"></div>
+</section>
+
+<!-- CALORIES -->
+<section class="card">
+    <h2><i class="fas fa-fire"></i> Calories Burned</h2>
+
+    <div class="stat-card">
+        <div class="stat-info">
+            <div class="stat-value" id="caloriesBurned">0 kcal</div>
+            <progress id="calorieBar" value="0" max="800"></progress>
+        </div>
+    </div>
+</section>
+
+<!-- NEXT -->
+<section class="card text-center">
+    <button class="btn btn-primary" onclick="goNext()">
+        Next → Diet
+    </button>
+</section>
+
+</main>
+
+<script src="auth.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>
