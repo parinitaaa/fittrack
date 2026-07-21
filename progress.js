@@ -71,16 +71,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function goNext() {
+    const user = auth.getUser();
+    const weight = Number(user?.userData?.weight || 60);
+    const caloriesStr = document.getElementById("caloriesBurned").innerText;
+    const calories = parseInt(caloriesStr) || 0;
+    
+    saveDailyProgress(weight, calories);
+    auth.completeStep('progress');
+    
     window.location.href = "diet.html";
 }
+
 function saveDailyProgress(weight, calories) {
     const history = JSON.parse(localStorage.getItem('progress_history')) || [];
     
-    history.push({
-        date: new Date().toLocaleDateString(),
-        weight: weight,
-        calories: calories
-    });
+    // Check if we already saved today to avoid duplicate entries
+    const today = new Date().toLocaleDateString();
+    const existingIndex = history.findIndex(h => h.date === today);
+    
+    if (existingIndex !== -1) {
+        history[existingIndex].weight = weight;
+        history[existingIndex].calories = calories;
+    } else {
+        history.push({
+            date: today,
+            weight: weight,
+            calories: calories
+        });
+    }
 
     localStorage.setItem('progress_history', JSON.stringify(history));
 }

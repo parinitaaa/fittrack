@@ -1,7 +1,7 @@
 // login.js - Login page logic
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
-    const formAlert = document.querySelector('.alert-info');
+    const formAlert = document.getElementById('formAlert');
     
     // Real-time validation
     const emailInput = document.getElementById('email');
@@ -99,6 +99,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         return validationFn(field.value);
+    }
+    
+    // Handle forgot password
+    const forgotPasswordLink = document.getElementById('forgotPassword');
+    if (forgotPasswordLink) {
+        forgotPasswordLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+            if (!email) {
+                showAlert('Please enter your email address first to reset your password.', 'info');
+            } else {
+                showAlert('A password reset link has been sent to ' + email, 'success');
+            }
+        });
     }
     
     // Demo auto-fill helper
