@@ -216,6 +216,16 @@ register(name, email, password) {
             );
         }
     }
+
+    addPoints(amount) {
+        if (!this.currentUser) return;
+        const progress = this.getProgress();
+        progress.points += amount;
+        localStorage.setItem(
+            `fitness_progress_${this.currentUser.id}`,
+            JSON.stringify(progress)
+        );
+    }
 }
 
 /* ---------- GLOBAL ---------- */
